@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>助童新生 与爱童行</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/video-js.css">
+    <link rel="stylesheet" href="css/reset.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script>
+        wx.config({
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: "<{$signPackage['appId']}>", // 必填，公众号的唯一标识
+            timestamp: "<{$signPackage['timestamp']}>", // 必填，生成签名的时间戳
+            nonceStr: "<{$signPackage['nonceStr']}>", // 必填，生成签名的随机串
+            signature: "<{$signPackage['signature']}>",// 必填，签名，见附录1
+            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        });
+        wx.ready(function () {
+            share();
+        });
+
+
+        // 分享功能
+        function setShare(){
+
+        }
+        function share(){
+            wx.onMenuShareTimeline({
+                title: '助童新生 与爱童行',
+                desc: '关爱新生天使公益计划，给孩子一个健康的家',
+                link: "http://juice.hengdikeji.com/index.php/contribution",
+                imgUrl: 'http://juice.hengdikeji.com/contribution.png',
+
+                trigger: function (res) {
+                },
+                success: function (res) {
+
+                },
+                cancel: function (res) {
+                },
+                fail: function (res) {
+                }
+            });
+            wx.onMenuShareAppMessage({
+                title: '助童新生 与爱童行',
+                desc: '关爱新生天使公益计划，给孩子一个健康的家',
+                link: "http://juice.hengdikeji.com/index.php/contribution",
+                imgUrl: 'http://juice.hengdikeji.com/contribution.png',
+                trigger: function (res) {
+                },
+                success: function (res) {
+
+                },
+                cancel: function (res) {
+                },
+                fail: function (res) {
+                }
+            });
+        }
+    </script>
+    <!--rem-->
+    <script>
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if(!clientWidth) return;
+                    if(clientWidth >= 750) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+
+            if(!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/scrollReveal.js"></script>
+</head>
+<body>
+<!--删除不良信息-->
+<div class="delete1" hidden="hidden"></div>
+<div id="page">
+    <div class="list1">
+        <div class="swiper-container swiper1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="img/banner01.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/banner02.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/banner03.png" alt="" style="width: 80%">
+                </div>
+            </div>
+            <div class="swiper-button-prev prev1"></div>
+            <div class="swiper-button-next next1"></div>
+        </div>
+        <div class="l1-title">
+            <img src="img/img01.png" alt="">
+        </div>
+        <div class="l1-button">
+            <button>
+                <img src="img/button01.png" alt="" class="img">
+            </button>
+        </div>
+    </div>
+    <div class="list2">
+        <div class="l2-title">
+            <img src="img/title01.png" alt="">
+        </div>
+        <div class="l2-video">
+                video
+        </div>
+    </div>
+    <div class="list2">
+        <div class="l2-title">
+            <img src="img/title02.png" alt="">
+        </div>
+        <div class="l2-wrap">
+            <div>
+                <div class="l2wrap-1">
+                    <div class="l2wrap1-title">
+                        20万天使基金已完成XX%
+                    </div>
+                    <div class="l2wrap1-text">
+                        <div>心手相牵，与爱童行，为新生病残、</div>
+                        <div>困难儿童插上梦想的翅膀。</div>
+                    </div>
+                </div>
+                <div class="l2wrap-2">
+                    <div class="line">
+                        <div>
+                            <div class="line-left"></div>
+                            <div class="line-right">
+                                <div class="line-xian">
+                                    <div></div>
+                                </div>
+                                <div class="line-circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="l2wrap-3">
+                    <div>
+                        <div>目标募捐/元</div>
+                        <div>XXXX</div>
+                    </div>
+                    <div>
+                        <div>当前募捐/元</div>
+                        <div>XXXX</div>
+                    </div>
+                    <div>
+                        <div>募捐/次</div>
+                        <div>XXXX</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list2">
+        <div class="l2-title">
+            <img src="img/title03.png" alt="">
+        </div>
+        <div class="l2-wrap1">
+            <div class="l2-wrap1-1">
+                <img src="img/img02.png" alt="">
+                <div class="l2wrap1-1-text">
+                    <span>感恩有你，世界充满爱</span>
+                </div>
+                <div class="circle-1">
+                    <div></div>
+                </div>
+            </div>
+            <div class="l2-wrap1-2">
+                <div>
+                    <div class="l2-wrapList">
+                        <div class="list-top">
+                            <div>
+                                张某某
+                            </div>
+                            <div>
+                                时间：XX月XX日
+                            </div>
+                            <div>
+                                捐出：XXXX元
+                            </div>
+                        </div>
+                        <div class="list-bottom">爱的留言：xxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    </div>
+                    <div class="l2-wrapList">
+                        <div class="list-top">
+                            <div>
+                                张某某
+                            </div>
+                            <div>
+                                时间：XX月XX日
+                            </div>
+                            <div>
+                                捐出：XXXX元
+                            </div>
+                        </div>
+                        <div class="list-bottom">爱的留言：xxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    </div>
+                    <div class="l2-wrapList">
+                        <div class="list-top">
+                            <div>
+                                张某某
+                            </div>
+                            <div>
+                                时间：XX月XX日
+                            </div>
+                            <div>
+                                捐出：XXXX元
+                            </div>
+                        </div>
+                        <div class="list-bottom">爱的留言：xxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    </div>
+                    <div class="l2-wrapList">
+                        <div class="list-top">
+                            <div>
+                                张某某
+                            </div>
+                            <div>
+                                时间：XX月XX日
+                            </div>
+                            <div>
+                                捐出：XXXX元
+                            </div>
+                        </div>
+                        <div class="list-bottom">爱的留言：xxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list2">
+        <div class="l2-title">
+            <img src="img/title04.png" alt="">
+        </div>
+        <div class="l2-wrap2">
+            <div class="l2-wrap2-1">
+                <div class="socailBanner">
+                    <div class="swiper-container swiper-container-socail">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="socailBox">
+                                    <img src="img/img05.png" class="img"/>
+                                </div>
+                                <div class="socailText clearFloat">
+                                    <div class="stLeft floatr">
+                                        <p>鲁丽晶</p>
+                                    </div>
+                                    <div class="stRight floatr">
+                                        <p>小水滴发起人</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="socailBox">
+                                    <img src="img/img03.png" class="img"/>
+                                </div>
+                                <div class="socailText clearFloat">
+                                    <div class="stLeft floatr">
+                                        <p>辛福民</p>
+                                    </div>
+                                    <div class="stRight floatr">
+                                        <p>诗尼曼董事长</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="socailBox">
+                                    <img src="img/img04.png" class="img"/>
+                                </div>
+                                <div class="socailText clearFloat">
+                                    <div class="stLeft floatr">
+                                        <p>海清</p>
+                                    </div>
+                                    <div class="stRight floatr">
+                                        <p>诗尼曼品牌代言人<br/>小水滴新生基金代言人</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="l2-wrap2-2">
+                <img src="img/img06.png" alt="">
+            </div>
+            <div class="l2-wrap2-3">
+                <div class="swiper-container swiper3">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/img07.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/img08.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/img07.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list2">
+        <div class="l2-title">
+            <img src="img/title05.png" alt="">
+        </div>
+        <div class="l2-wrap3">
+            <div>
+                <img src="img/img09_03.png" alt="">
+            </div>
+            <div>
+                <img src="img/img09_05.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="list2">
+        <div class="l2-title">
+            <img src="img/title06.png" alt="">
+        </div>
+        <div class="l2-wrap4">
+            <div class="w4-1">
+                <img src="img/img10.png" alt="">
+                <img src="img/img11.png" alt="">
+                <img src="img/img12.png" alt="">
+                <img src="img/img13.png" alt="">
+            </div>
+            <div class="w4-2">
+                <img src="img/img14.png" alt="">
+            </div>
+            <div class="w4-1">
+                <img src="img/img15.png" alt="">
+                <img src="img/img16.png" alt="">
+                <img src="img/img17.png" alt="">
+                <img src="img/img18.png" alt="">
+            </div>
+            <div class="w4-button">
+                <a href="###" style="background: url('img/button02.png') no-repeat;background-size: 100% 100%">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="list2 list-2">
+        <div class="l2-title">
+            <img src="img/title07.png" alt="">
+        </div>
+        <div class="l2-wrap5">
+            <div class="w5-1">
+                <img src="img/img19.png" alt="">
+            </div>
+            <div class="w5-2">
+                <p>中国残疾人联合会公布的一项中国0-6岁残疾儿童抽样调查结果显示，全国约有0-6岁残疾儿童139.5万。每年新增0-6岁残疾儿童约19.9万，新生病残儿童群体在扩大。有的先天缺陷儿童被无情抛弃，有的贫困儿童正在被疾病折磨，他们正在等待一笔挽回生命的救命钱。挽救一条生命，挽救一个家庭，感谢你，让孩子有机会拥有正常的童年，给了孩子一个温暖的家。</p>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <img src="img/img20.png" alt="">
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.min.js"></script>
+<script>
+    $('.img').on('click',function (event) {
+        event.preventDefault();
+        return false;
+    });
+</script>
+<script type="text/javascript" src="js/video.min.js"></script>
+<script>
+    $(function () {
+        var swiper1 = new Swiper('.swiper1',{
+            loop:true,
+            navigation:{
+                prevEl:'.prev1',
+                nextEl:'.next1'
+            }
+        })
+        var mySwiper2 = new Swiper('.swiper-container-socail',{
+            // autoplay:3000,
+            speed:1000,
+            autoplayDisableOnInteraction : false,
+            loop:true,
+            centeredSlides : true,
+            slidesPerView:2,
+            loopedSlides :3,
+            paginationClickable:true,
+            spaceBetween: 10
+        });
+        var swiper3 = new Swiper('.swiper3',{
+            spaceBetween: 5,
+            slidesPerView : 2.5,
+        })
+    })
+</script>
+<!--删除不良信息-->
+<div class="delete2" hidden="hidden"></div>
+</body>
+</html>
