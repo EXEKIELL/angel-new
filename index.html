@@ -8,6 +8,7 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
     <meta content="telephone=no" name="format-detection"/>
     <link rel="stylesheet" href="css/video-js.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/reset.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.min.css">
     <link rel="stylesheet" href="css/index.css">
@@ -112,7 +113,7 @@
         </div>
         <div class="l1-button">
             <button>
-                <img src="img/button01.png" alt="" class="img">
+                <img src="img/button01.png" alt="" onclick="return false">
             </button>
         </div>
     </div>
@@ -132,7 +133,7 @@
             <div>
                 <div class="l2wrap-1">
                     <div class="l2wrap1-title">
-                        20万天使基金已完成XX%
+                        20万天使基金已完成<span class="num">0</span>%
                     </div>
                     <div class="l2wrap1-text">
                         <div>心手相牵，与爱童行，为新生病残、</div>
@@ -336,19 +337,19 @@
         </div>
         <div class="l2-wrap4">
             <div class="w4-1">
-                <img src="img/img10.png" alt="">
-                <img src="img/img11.png" alt="">
-                <img src="img/img12.png" alt="">
-                <img src="img/img13.png" alt="">
+                <img class="img01" src="img/img10.png" alt="">
+                <img class="img02" src="img/img11.png" alt="">
+                <img class="img03" src="img/img12.png" alt="">
+                <img class="img04" src="img/img13.png" alt="">
             </div>
             <div class="w4-2">
-                <img src="img/img14.png" alt="">
+                <img class="img05" src="img/img14.png" alt="">
             </div>
             <div class="w4-1">
-                <img src="img/img15.png" alt="">
-                <img src="img/img16.png" alt="">
-                <img src="img/img17.png" alt="">
-                <img src="img/img18.png" alt="">
+                <img class="img06" src="img/img15.png" alt="">
+                <img class="img07" src="img/img16.png" alt="">
+                <img class="img08" src="img/img17.png" alt="">
+                <img class="img09" src="img/img18.png" alt="">
             </div>
             <div class="w4-button">
                 <a href="###" style="background: url('img/button02.png') no-repeat;background-size: 100% 100%">
@@ -383,15 +384,84 @@
 <script type="text/javascript" src="js/video.min.js"></script>
 <script>
     $(function () {
+        //隐藏元素
+        $('.w4-1>img,.w4-2>img').css({
+            opacity:0
+        });
+        //救助前后图效果
+        var height01 = 2400;
+        //完成度效果
+        var height02 = 346;
+        var timer2 = null;
+        var status01 = 0;
+        $(window).scroll(function(event){
+            console.log($(window).scrollTop());
+            if($(window).scrollTop()>0&&$(window).scrollTop()<600){
+                $('.l1-button>button').addClass('animated swing');
+            }else{
+                $('.l1-button>button').removeClass('animated swing');
+            }
+            //救助前后图效果
+            if($(window).scrollTop()>height01&&$(window).scrollTop()<height01+$('.l2-wrap4').innerHeight()){
+                $('.img01').addClass('animated fadeInLeft');
+                $('.img02').addClass('animated fadeInRight');
+            }else{
+                $('.img01').removeClass('animated fadeInLeft');
+                $('.img02').removeClass('animated fadeInRight');
+            }
+            if($(window).scrollTop()>height01+100&&$(window).scrollTop()<height01+100+$('.l2-wrap4').innerHeight()){
+                $('.img03').addClass('animated fadeInLeft');
+                $('.img04').addClass('animated fadeInRight');
+            }else{
+                $('.img03').removeClass('animated fadeInLeft');
+                $('.img04').removeClass('animated fadeInRight');
+            }
+            if($(window).scrollTop()>height01+200&&$(window).scrollTop()<height01+200+$('.l2-wrap4').innerHeight()){
+                $('.img05').addClass('animated fadeInDown');
+            }else{
+                $('.img05').removeClass('animated fadeInDown');
+            }
+            if($(window).scrollTop()>height01+400&&$(window).scrollTop()<height01+400+$('.l2-wrap4').innerHeight()){
+                $('.img06').addClass('animated fadeInLeft');
+                $('.img07').addClass('animated fadeInRight');
+            }else{
+                $('.img06').removeClass('animated fadeInLeft');
+                $('.img07').removeClass('animated fadeInRight');
+            }
+            if($(window).scrollTop()>height01+600&&$(window).scrollTop()<height01+600+$('.l2-wrap4').innerHeight()){
+                $('.img08').addClass('animated fadeInLeft');
+                $('.img09').addClass('animated fadeInRight');
+            }else{
+                $('.img08').removeClass('animated fadeInLeft');
+                $('.img09').removeClass('animated fadeInRight');
+            }
+            if($(window).scrollTop()>height01+700&&$(window).scrollTop()<height01+700+$('.l2-wrap4').innerHeight()){
+                $('.w4-button>a').addClass('animated swing');
+            }else{
+                $('.w4-button>a').removeClass('animated swing');
+            }
+            // 完成度效果
+            if($(window).scrollTop() > height02&&$(window).scrollTop()<900){
+                if(status01 == 0){
+                    complete(50);
+                    console.log(height02+$('.l2-wrap').innerHeight())
+                    status01 = 1
+                }
+            }
+            if($(window).scrollTop()>1200){
+                status01 = 0
+            }
+        });
         var swiper1 = new Swiper('.swiper1',{
             loop:true,
+            autoplay:true,
             navigation:{
                 prevEl:'.prev1',
                 nextEl:'.next1'
             }
         })
         var mySwiper2 = new Swiper('.swiper-container-socail',{
-            // autoplay:3000,
+            autoplay:true,
             speed:1000,
             autoplayDisableOnInteraction : false,
             loop:true,
@@ -404,6 +474,54 @@
         var swiper3 = new Swiper('.swiper3',{
             spaceBetween: 5,
             slidesPerView : 2.5,
+        });
+
+
+        //滚屏
+        var list2 = $('.l2-wrap1-2>div>div').clone();
+        $('.l2-wrap1-2>div').append(list2);
+        var h1 = $('.l2-wrap1-2>div').innerHeight();
+        console.log(h1);
+        var h_1 = 0;
+        if($('.l2-wrap1-2>div>div').length>=8){
+            var timer1 = setInterval(function () {
+                if(h_1>=h1/2){
+                    h_1 = 0
+                }else{
+                    $('.l2-wrap1-2>div').css({
+                        transform:'translateY(-'+h_1+'px)'
+                    });
+                    h_1+=0.5;
+                }
+            },10)
+        }
+
+        // 完成度
+        function complete(num) {
+            var n = num,
+                n1 = 0,
+                n2 = 100;
+            if(!timer2){
+                timer2 = setInterval(function () {
+                    if(n1>=num+1){
+                        clearInterval(timer2);
+                        timer2 = null;
+                    }else{
+                        $('.num').text(n1);
+                        $('.line>div').css({
+                            transform:'translateX(-'+n2+'%)'
+                        })
+                        n1++;
+                        n2--;
+                    }
+                },15)
+            }
+        }
+
+        // 点击事件：
+        // 为爱捐款
+        $('.l1-button>button').on('click',function () {
+            alert(1)
         })
     })
 </script>
